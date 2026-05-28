@@ -33,12 +33,7 @@ class Solution {
             return;
         }
 
-        // Choice 1: SKIP current element
-        // Move to next index
-        // Current element is ignored
-        fun(candidates, target, res, diary, n, idx + 1, sum);
-
-        // Choice 2: TAKE current element
+        // Choice 1: TAKE current element
         // Take element only if sum does not exceed target
         if(candidates[idx] + sum <= target){
             
@@ -56,6 +51,11 @@ class Solution {
             // Restore previous sum
             sum -= candidates[idx];
         }
+
+        // Choice 2: SKIP current element
+        // Move to next index
+        // Current element is ignored
+        fun(candidates, target, res, diary, n, idx + 1, sum);
 
         // End current recursion call
         return;
